@@ -1,11 +1,14 @@
 var express = require("express");
 var app = express();
 
+//指定statics地址
+//express.static('./static')
+
 
 //中间件
-app.use(express.compress()); //压缩
-app.use(express.cookieParser()); //cookie支持
-app.use(express.cookieSession()); //session支持
+//app.use(express.compress()); //压缩
+//app.use(express.cookieParser()); //cookie支持
+//app.use(express.cookieSession()); //session支持
 
 
 app.get("/", function (req, res) {
@@ -13,7 +16,7 @@ app.get("/", function (req, res) {
 });
 app.get("/index", function(req, res) {
     //res.json("h");
-    res.sendFile("static/index/html");
+    res.sendFile("static/index.html", {root: __dirname});
 });
 
 var server = app.listen(3000, function(){
