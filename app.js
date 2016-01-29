@@ -15,7 +15,7 @@ app.get("/", function (req, res) {
     res.send('hello world!');
 });
 app.get("/index", function(req, res) {
-    res.sendFile("static/index.html", {root: __dirname});
+    res.sendFile("static/index.html", {root: '__dirname'});
 });
 
 var server = app.listen(3000, function(){
