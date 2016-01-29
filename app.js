@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 
 //指定statics地址
-//express.static('./static')
+app.use(express.static('./static'));
 
 
 //中间件
@@ -15,7 +15,6 @@ app.get("/", function (req, res) {
     res.send('hello world!');
 });
 app.get("/index", function(req, res) {
-    //res.json("h");
     res.sendFile("static/index.html", {root: __dirname});
 });
 
